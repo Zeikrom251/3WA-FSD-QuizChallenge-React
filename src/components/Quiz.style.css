@@ -1,0 +1,150 @@
+:root {
+  --primary-color: #ff0000;
+  --secondary-color: #333;
+  --background-color: #f9f9f9;
+  --border-color: #bbb;
+  --correct-bg: #e0ffec;
+  --correct-border: #28a745;
+  --wrong-bg: #ffe0e0;
+  --wrong-border: #dc3545;
+  --font-size-large: 26px;
+  --font-size-medium: 18px;
+  --font-size-small: 16px;
+  --border-radius: 10px;
+  --transition-speed: 0.3s;
+}
+
+.container {
+  width: 600px;
+  margin: auto;
+  margin-top: 120px;
+  background: var(--background-color);
+  color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border-radius: var(--border-radius);
+  padding: 35px 45px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.container hr {
+  height: 2px;
+  border: none;
+  background: var(--border-color);
+  opacity: 0.6;
+}
+
+.container h2 {
+  font-size: var(--font-size-large);
+  font-weight: 700;
+  text-align: center;
+}
+
+.container ul li {
+  display: flex;
+  align-items: center;
+  height: 65px;
+  padding-left: 18px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  margin-bottom: 12px;
+  font-size: var(--font-size-medium);
+  cursor: pointer;
+  transition: background var(--transition-speed),
+    transform var(--transition-speed);
+}
+
+.container ul li:hover {
+  background: rgba(0, 0, 0, 0.04);
+  transform: scale(1.03);
+}
+
+.container button {
+  margin: auto;
+  width: 230px;
+  height: 60px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  border: none;
+  transition: background var(--transition-speed),
+    transform var(--transition-speed);
+}
+
+.container button:hover {
+  background-color: #e62300;
+  transform: scale(1.06);
+}
+
+.container .index {
+  margin: auto;
+  font-size: var(--font-size-small);
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+.container .correct {
+  background: var(--correct-bg);
+  border-color: var(--correct-border);
+}
+
+.container .wrong {
+  background: var(--wrong-bg);
+  border-color: var(--wrong-border);
+}
+
+/* Timer */
+.timer {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff5722; /* Rouge-orangé pour attirer l'attention */
+  background: #fff3e0;
+  padding: 8px 15px;
+  border-radius: 8px;
+  display: inline-block;
+  margin: 10px 0;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Quand il reste moins de 10 secondes, on change la couleur en rouge */
+.timer.low-time {
+  color: #d32f2f;
+  background: #ffebee;
+  animation: blink 1s infinite;
+}
+
+/* Animation de clignotement */
+@keyframes blink {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Message affiché quand le temps est écoulé */
+.message {
+  font-size: 16px;
+  font-weight: bold;
+  color: #d32f2f;
+  background: #ffebee;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 10px 0;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
